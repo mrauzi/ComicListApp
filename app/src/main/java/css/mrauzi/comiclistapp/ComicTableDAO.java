@@ -50,7 +50,7 @@ public class ComicTableDAO {
      * @param comicVolume - the volume number of the comic
      * @return Comic - returns the comic that was created
      */
-    public Comic createPlanet(String comicName, double comicPrice, int comicVolume) {
+    public Comic createComic(String comicName, double comicPrice, int comicVolume) {
         // store new values into a ContentValues object
         ContentValues values = new ContentValues();
         values.put(DatabaseHelper.DB_FIELD_COMICNAME, comicName);
@@ -105,7 +105,7 @@ public class ComicTableDAO {
      * @param comic - object with the new comic data to update the database
      * @return  number of rows updated - should generally be 1
      * */
-    public int updatePlanet(Comic comic) {
+    public int updateComic(Comic comic) {
         // store new values into a ContentValues object
         ContentValues values = new ContentValues();
         values.put(DatabaseHelper.DB_FIELD_COMICNAME, comic.getName());

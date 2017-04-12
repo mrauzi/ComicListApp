@@ -15,11 +15,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class ComicActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     Button btnAmazon;
+    Button btnAddComic;
+    Button btnViewList;
+    ComicTableDAO comicTable;
+    EditText etComicName;
+    EditText etComicPrice;
+    EditText etComicVol;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +34,11 @@ public class ComicActivity extends AppCompatActivity
         setContentView(R.layout.activity_comic);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        comicTable = new ComicTableDAO(this);
+        etComicName = (EditText)findViewById(R.id.editTextComicName);
+        etComicPrice = (EditText)findViewById(R.id.editTextComicPrice);
+        etComicVol = (EditText)findViewById(R.id.editTextComicVolume);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +65,23 @@ public class ComicActivity extends AppCompatActivity
 
             }
         });
+
+        btnViewList = (Button)findViewById(R.id.buttonViewList);
+        btnViewList.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // button will add a comic to the comic database
+               
+            }
+        });
+
+        btnAddComic = (Button)findViewById(R.id.buttonAddComic);
+        btnAddComic.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // button will add a comic to the comic database
+                comicTable.createComic(etComicName.getText().toString(), Double.parseDouble(etComicPrice.getText().toString()),Integer.parseInt(etComicVol.getText().toString()));
+            }
+        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
