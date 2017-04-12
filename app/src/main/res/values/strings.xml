@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">ComicListApp</string>
+    <string name="welcome_to_comiclist">Welcome to ComicList!</string>
+    <string name="title_activity_comic">ComicActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="press_the_enter_button_to_start">Press the ENTER button to start.</string>
+    <string name="enter">ENTER</string>
+    <string name="this_app_allows_you_to_keep_a_list_of_comics_that_you_are_interested_in">This app allows you to keep a list of comics that you are interested in.</string>
+    <string name="amazon">Amazon</string>
+    <string name="press_this_button_to_open_amazon_com_and_start_searching_for_comics">Press this button to open Amazon.com and start searching for comics.</string>
+    <string name="comic_name">Comic Name:</string>
+    <string name="comic_price">Comic Price:</string>
+    <string name="comic_volume">Comic Volume #:</string>
+    <string name="add_comic_to_list">Add Comic to List</string>
+    <string name="view_comic_list">View Comic List</string>
+    <string name="help">Help</string>
+</resources>

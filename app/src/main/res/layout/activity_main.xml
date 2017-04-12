@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="css.mrauzi.comiclistapp.MainActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textViewWelcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_to_comiclist"
+            android:textStyle="normal|bold"
+            android:textAllCaps="true"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textColor="@android:color/holo_blue_dark" />
+
+        <TextView
+            android:id="@+id/textViewAppDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/this_app_allows_you_to_keep_a_list_of_comics_that_you_are_interested_in"
+            android:textStyle="normal|bold"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:layout_below="@+id/textViewWelcome"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="33dp" />
+
+        <Button
+            android:text="@string/enter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewAppDescription"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="65dp"
+            android:id="@+id/buttonEnter"
+            android:textSize="24sp"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/textViewButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/press_the_enter_button_to_start"
+            android:textStyle="normal|bold"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:layout_below="@+id/textViewAppDescription"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="21dp" />
+    </LinearLayout>
+
+</LinearLayout>
