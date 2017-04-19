@@ -19,7 +19,8 @@
             android:name=".ComicActivity"
             android:label="@string/title_activity_comic"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".HelpActivity"></activity>
+        <activity android:name=".HelpActivity" />
+        <activity android:name=".ListViewActivity"></activity>
     </application>
 
 </manifest>

@@ -18,4 +18,16 @@
     <string name="add_comic_to_list">Add Comic to List</string>
     <string name="view_comic_list">View Comic List</string>
     <string name="help">Help</string>
+    <string name="step_1">Step 1:</string>
+    <string name="step_2">Step 2:</string>
+    <string name="step_3">Step 3:</string>
+    <string name="step_4">Step 4:</string>
+    <string name="step_5">Step 5:</string>
+    <string name="communicate">Communicate</string>
+    <string name="gallery">Gallery</string>
+    <string name="import">Import</string>
+    <string name="send">Send</string>
+    <string name="share">Share</string>
+    <string name="slideshow">Slideshow</string>
+    <string name="tools">Tools</string>
 </resources>

@@ -69,7 +69,9 @@ public class ComicActivity extends AppCompatActivity
         btnViewList = (Button)findViewById(R.id.buttonViewList);
         btnViewList.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // button will add a comic to the comic database
+                // button will open the activity to view the list of comics
+                Intent listViewIntent = new Intent(ComicActivity.this, ListViewActivity.class);
+                startActivity(listViewIntent);
 
             }
         });
