@@ -44,7 +44,7 @@ public class ComicActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "We hope you are enjoying the app so far!", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -70,7 +70,7 @@ public class ComicActivity extends AppCompatActivity
         btnViewList.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // button will add a comic to the comic database
-               
+
             }
         });
 
