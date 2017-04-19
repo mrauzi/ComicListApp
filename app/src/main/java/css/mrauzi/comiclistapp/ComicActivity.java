@@ -66,6 +66,9 @@ public class ComicActivity extends AppCompatActivity
             }
         });
 
+        /**
+         *  Set up button click event listener for the user to view the list of comics from the database
+         */
         btnViewList = (Button)findViewById(R.id.buttonViewList);
         btnViewList.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -76,6 +79,9 @@ public class ComicActivity extends AppCompatActivity
             }
         });
 
+        /**
+         *  Set up button click event listener for the user to add a comic to the database
+         */
         btnAddComic = (Button)findViewById(R.id.buttonAddComic);
         btnAddComic.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

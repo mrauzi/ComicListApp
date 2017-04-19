@@ -9,10 +9,10 @@ package css.mrauzi.comiclistapp;
 
 public class Comic {
 
-    private Long _id;       // database record ID
-    private String name;    // comic name
-    private double price;   // comic price
-    private int volume;     // comic volume number
+    private Long _id;           // database record ID
+    private String name;        // comic name
+    private Double price;       // comic price
+    private Integer volume;     // comic volume number
 
     /**
      * Comic() - constructor to create a comic object
@@ -22,7 +22,7 @@ public class Comic {
      * @param price the price of the comic
      * @param volume the volume number of the comic
      */
-    public Comic(Long _id, String name, double price, int volume) {
+    public Comic(Long _id, String name, Double price, Integer volume) {
         this._id = _id;
         this.name = name;
         this.price = price;
@@ -61,7 +61,7 @@ public class Comic {
      *
      * @return the price of the comic
      */
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
@@ -70,7 +70,7 @@ public class Comic {
      *
      * @param price the double variable of the price
      */
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
@@ -79,7 +79,7 @@ public class Comic {
      *
      * @return the volume of the comic
      */
-    public int getVolume() {
+    public Integer getVolume() {
         return volume;
     }
 
@@ -88,7 +88,7 @@ public class Comic {
      *
      * @param volume the int variable of the volume
      */
-    public void setVolume(int volume) {
+    public void setVolume(Integer volume) {
         this.volume = volume;
     }
 
