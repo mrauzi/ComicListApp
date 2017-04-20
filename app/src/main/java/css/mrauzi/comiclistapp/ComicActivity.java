@@ -35,7 +35,9 @@ public class ComicActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        comicTable = new ComicTableDAO(this);
+        comicTable = new ComicTableDAO(this);   // initialize the comic table data access object
+        comicTable.open();                      // open the database
+
         etComicName = (EditText)findViewById(R.id.editTextComicName);
         etComicPrice = (EditText)findViewById(R.id.editTextComicPrice);
         etComicVol = (EditText)findViewById(R.id.editTextComicVolume);
@@ -87,6 +89,11 @@ public class ComicActivity extends AppCompatActivity
             public void onClick(View v) {
                 // button will add a comic to the comic database
                 comicTable.createComic(etComicName.getText().toString(), Double.parseDouble(etComicPrice.getText().toString()),Integer.parseInt(etComicVol.getText().toString()));
+                Snackbar.make(v, "Comic has been added to the list", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+                etComicName.setText("");
+                etComicPrice.setText("");
+                etComicVol.setText("");
             }
         });
 
@@ -167,5 +174,25 @@ public class ComicActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    /**
+     * onResume() - when the ComicActivity returns to the app foreground, the comic database
+     * is opened again
+     */
+    @Override
+    protected void onResume() {
+        comicTable.open();
+        super.onResume();
+    }
+
+    /**
+     * onPause() - when the ComicActivity is left or "paused" by the user, the comic database
+     * is closed
+     */
+    @Override
+    protected void onPause() {
+        comicTable.close();
+        super.onPause();
     }
 }
