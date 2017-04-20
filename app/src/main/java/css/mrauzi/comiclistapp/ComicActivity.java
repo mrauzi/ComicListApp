@@ -88,12 +88,19 @@ public class ComicActivity extends AppCompatActivity
         btnAddComic.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // button will add a comic to the comic database
-                comicTable.createComic(etComicName.getText().toString(), Double.parseDouble(etComicPrice.getText().toString()),Integer.parseInt(etComicVol.getText().toString()));
-                Snackbar.make(v, "Comic has been added to the list", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-                etComicName.setText("");
-                etComicPrice.setText("");
-                etComicVol.setText("");
+                // if the edit text fields are not null, add the comic to the database
+                if (etComicName.getText().toString().trim().length() != 0 && etComicPrice.getText().toString().trim().length() != 0 && etComicVol.getText().toString().trim().length() != 0) {
+                    comicTable.createComic(etComicName.getText().toString(), Double.parseDouble(etComicPrice.getText().toString()), Integer.parseInt(etComicVol.getText().toString()));
+                    Snackbar.make(v, "Comic has been added to the list", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                    etComicName.setText("");
+                    etComicPrice.setText("");
+                    etComicVol.setText("");
+                }
+                else {
+                    Snackbar.make(v, "You must include all of the comic information to add to your list", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
             }
         });
 

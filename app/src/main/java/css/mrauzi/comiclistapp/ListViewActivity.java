@@ -17,7 +17,7 @@ public class ListViewActivity extends AppCompatActivity {
 
         lvComic = (ListView) findViewById(R.id.listViewComic);
 
-        final ArrayList<Comic> comicList = new ArrayList<Comic>();
+        final ArrayList<Comic> comicList = new ArrayList<>();
         ComicAdapter comicAdapter = new ComicAdapter(this, R.layout.comic_row, R.id.textViewComicName, comicList);
         comicAdapter.setDropDownViewResource(R.layout.comic_row);
         lvComic.setAdapter(comicAdapter);
