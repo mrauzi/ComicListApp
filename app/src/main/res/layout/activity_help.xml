@@ -21,14 +21,14 @@
             android:layout_height="wrap_content"
             android:id="@+id/textViewStep1"
             android:textStyle="normal|bold"
-            android:textSize="18sp" />
+            android:textSize="24sp" />
 
         <TextView
             android:text="@string/step_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textViewStep2"
-            android:textSize="18sp"
+            android:textSize="24sp"
             android:textStyle="normal|bold" />
 
         <TextView
@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textViewStep3"
-            android:textSize="18sp"
+            android:textSize="24sp"
             android:textStyle="normal|bold" />
 
         <TextView
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textViewStep4"
-            android:textSize="18sp"
+            android:textSize="24sp"
             android:textStyle="normal|bold" />
 
         <TextView
@@ -52,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textViewStep5"
-            android:textSize="18sp"
+            android:textSize="24sp"
             android:textStyle="normal|bold" />
     </LinearLayout>
 </LinearLayout>

@@ -90,6 +90,7 @@ public class ComicActivity extends AppCompatActivity
                 // button will add a comic to the comic database
                 // if the edit text fields are not null, add the comic to the database
                 if (etComicName.getText().toString().trim().length() != 0 && etComicPrice.getText().toString().trim().length() != 0 && etComicVol.getText().toString().trim().length() != 0) {
+                    // call createComic method to create and add a comic object to the database
                     comicTable.createComic(etComicName.getText().toString(), Double.parseDouble(etComicPrice.getText().toString()), Integer.parseInt(etComicVol.getText().toString()));
                     Snackbar.make(v, "Comic has been added to the list", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();

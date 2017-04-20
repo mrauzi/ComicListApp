@@ -56,7 +56,6 @@ public class ComicAdapter extends ArrayAdapter<Comic> {
         TextView tvName = (TextView)view.findViewById(R.id.textViewComicName);
         TextView tvPrice = (TextView)view.findViewById(R.id.textViewComicPrice);
         TextView tvVolume = (TextView)view.findViewById(R.id.textViewComicVolume);
-        //Button btnDelete = (Button) view.findViewById(R.id.buttonDelete);
 
         tvName.setText(comic.getName());
         tvPrice.setText(comic.getPrice().toString());

@@ -11,7 +11,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/textViewComicName"
         android:layout_weight="1"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:textStyle="normal|bold"
+        android:textAllCaps="true" />
 
     <TextView
         android:text="Price"
@@ -19,7 +21,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/textViewComicPrice"
         android:layout_weight="1"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:textStyle="normal|bold"
+        android:textAllCaps="false" />
 
     <TextView
         android:text="Volume"
@@ -27,13 +31,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/textViewComicVolume"
         android:layout_weight="1"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:textStyle="normal|bold" />
 
     <ImageButton
-        android:layout_width="wrap_content"
+        android:layout_width="45dp"
         android:layout_height="wrap_content"
         app:srcCompat="@android:drawable/ic_menu_delete"
-        android:id="@+id/imageButtonDelete"
-        android:layout_weight="1" />
+        android:id="@+id/imageButtonDelete" />
 
 </LinearLayout>
