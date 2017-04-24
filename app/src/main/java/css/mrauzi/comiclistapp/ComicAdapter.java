@@ -2,11 +2,13 @@ package css.mrauzi.comiclistapp;
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -20,6 +22,9 @@ public class ComicAdapter extends ArrayAdapter<Comic> {
 
     private List<Comic> comicList;
     private Context context;
+    ComicTableDAO comicTable;
+    ImageButton imgBtnDelete;
+
 
     /**
      * ComicAdapter() - constructor for the ComicAdapter which will create the comic lisr
@@ -43,10 +48,10 @@ public class ComicAdapter extends ArrayAdapter<Comic> {
      * @param parent
      */
     @Override
-    public View getView(int position, View convertView,
+    public View getView(final int position, View convertView,
                         ViewGroup parent) {
         // get the comic we are displaying
-        Comic comic = comicList.get(position);
+        final Comic comic = comicList.get(position);
         View view;
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
@@ -57,6 +62,30 @@ public class ComicAdapter extends ArrayAdapter<Comic> {
         TextView tvPrice = (TextView)view.findViewById(R.id.textViewComicPrice);
         TextView tvVolume = (TextView)view.findViewById(R.id.textViewComicVolume);
 
+        /**
+         * Set up button click event listener for the user to delete a comic from the database using the image button
+         */
+        imgBtnDelete = (ImageButton) view.findViewById(R.id.imageButtonDelete);
+        imgBtnDelete.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Log.d("CIS3334", "DeleteImageView setOnClickListener clicked row " + position);
+                // declare and open the comic database
+                comicTable = new ComicTableDAO(getContext());
+                comicTable.open();
+                // call deleteComic method to delete a comic object from the database
+                comicTable.deleteComic(comic);
+                Snackbar.make(v, "Comic has been deleted from the list", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+
+                // remove the comic object from the ListView
+                // comicList.remove(comic);
+                remove(comic);
+                notifyDataSetChanged();
+
+            }
+        });
+
+        // setting the TextViews to display the data
         tvName.setText(comic.getName());
         tvPrice.setText(comic.getPrice().toString());
         tvVolume.setText(comic.getVolume().toString());

@@ -12,7 +12,7 @@ public class ListViewActivity extends AppCompatActivity {
 
     ListView lvComic;
     ComicTableDAO comicTable;
-    ImageButton imgBtnDelete;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
