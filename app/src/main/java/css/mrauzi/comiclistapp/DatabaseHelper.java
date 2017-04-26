@@ -18,15 +18,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     static final String DB_FIELD_COMICNAME ="title";                // the name of the comic
     static final String DB_FIELD_COMICPRICE ="price";               // the price of the comic
     static final String DB_FIELD_COMICVOLUME = "volume";            // the volume number of the comic
+    static final String DB_FIELD_COMICSTATUS = "status";            // the status of checkbox in the comic list
 
-    private static DatabaseHelper singleInstance;                   // an instance of the database helper clas
+    private static DatabaseHelper singleInstance;                   // an instance of the database helper class
 
     // Database creation SQL statement
     private static final String DATABASE_CREATE_SQL_STRING = "create table "+ DB_TABLE_NAME
             + " ( "+DB_FIELD_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "
             +DB_FIELD_COMICNAME +" TEXT, "
             +DB_FIELD_COMICPRICE +" REAL, "
-            +DB_FIELD_COMICVOLUME +" INTEGER);";
+            +DB_FIELD_COMICVOLUME +" INTEGER, "
+            +DB_FIELD_COMICSTATUS +" TEXT);";
 
     // do not call this anymore
     public DatabaseHelper(Context context) {
@@ -41,7 +43,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static synchronized DatabaseHelper getInstance(Context context) {
         // Use the application context, which will ensure that you
         // don't accidentally leak an Activity's context.
-        // See this article for more information: http://bit.ly/6LRzfx
         if (singleInstance == null) {
             singleInstance = new DatabaseHelper(context.getApplicationContext());
         }

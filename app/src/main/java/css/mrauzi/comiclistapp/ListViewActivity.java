@@ -2,8 +2,6 @@ package css.mrauzi.comiclistapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ListView;
 
 import java.util.List;
@@ -30,20 +28,7 @@ public class ListViewActivity extends AppCompatActivity {
         comicAdapter.setDropDownViewResource(R.layout.comic_row);                                                       // sets the adapter to use the custom comic row
         lvComic.setAdapter(comicAdapter);                                                                               // sets the ListView to use the ComicAdapter
 
-        /**
-         *  Set up button click event listener for the user to delete a comic from the database
-         */
-        /*imgBtnDelete = (ImageButton) findViewById(R.id.imageButtonDelete);
-        imgBtnDelete.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Long id = Long.parseLong(DatabaseHelper.DB_FIELD_ID);
-                String name = DatabaseHelper.DB_FIELD_COMICNAME;
-                Double price = Double.parseDouble(DatabaseHelper.DB_FIELD_COMICPRICE);
-                Integer volume = Integer.parseInt(DatabaseHelper.DB_FIELD_COMICVOLUME);
-                Comic comic = new Comic(id, name, price, volume);
-                comicTable.deleteComic(comic);
-            }
-        });*/
+
     }
 
     /**
