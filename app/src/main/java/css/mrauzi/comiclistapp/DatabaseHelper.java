@@ -18,17 +18,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     static final String DB_FIELD_COMICNAME ="title";                // the name of the comic
     static final String DB_FIELD_COMICPRICE ="price";               // the price of the comic
     static final String DB_FIELD_COMICVOLUME = "volume";            // the volume number of the comic
-    static final String DB_FIELD_COMICSTATUS = "status";            // the status of checkbox in the comic list
 
-    private static DatabaseHelper singleInstance;                   // an instance of the database helper class
+    private static DatabaseHelper singleInstance;                   // an instance of the database helper class to be used with the Singleton Pattern
 
     // Database creation SQL statement
     private static final String DATABASE_CREATE_SQL_STRING = "create table "+ DB_TABLE_NAME
             + " ( "+DB_FIELD_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "
             +DB_FIELD_COMICNAME +" TEXT, "
             +DB_FIELD_COMICPRICE +" REAL, "
-            +DB_FIELD_COMICVOLUME +" INTEGER, "
-            +DB_FIELD_COMICSTATUS +" TEXT);";
+            +DB_FIELD_COMICVOLUME +" INTEGER);";
 
     // do not call this anymore
     public DatabaseHelper(Context context) {
@@ -36,7 +34,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * getInstance() - will make sure that only one instance of the database is used at a time.
+     * getInstance() - uses the Singleton Pattern to make sure that only one instance of the database is used at a time.
      *
      * @param context
      */

@@ -147,7 +147,7 @@ public class ComicActivity extends AppCompatActivity
             return true;
         }
         else if (id == R.id.action_help) {
-            // selecting "help" menu item will send user to the help page activity
+            // selecting "help" menu item icon will send user to the help page activity
             Intent helpPageIntent = new Intent(ComicActivity.this, HelpActivity.class);
             startActivity(helpPageIntent);
         }
@@ -174,7 +174,7 @@ public class ComicActivity extends AppCompatActivity
         } else if (id == R.id.nav_send) {
 
         } else if (id == R.id.nav_help) {
-            // selecting "help" nav_bar item will send user to the help page activity
+            // selecting "help" nav_bar item icon will send user to the help page activity
             Intent helpPageIntent = new Intent(ComicActivity.this, HelpActivity.class);
             startActivity(helpPageIntent);
         }

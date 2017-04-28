@@ -29,7 +29,7 @@ public class HelpActivity extends AppCompatActivity {
         tvStep2.setText("Step 2: When you find a comic, return to the app and enter in the information.");
         tvStep3.setText("Step 3: Press the 'Add Comic' button to add the comic to your list.");
         tvStep4.setText("Step 4: To view your comic list, press the 'View List' button.");
-        tvStep5.setText("Step 5: While viewing your list you will be able to delete comics as well as check ones that have been purchased.");
+        tvStep5.setText("Step 5: While viewing your list you will be able to delete comics by pressing the trashcan button.");
 
 
     }

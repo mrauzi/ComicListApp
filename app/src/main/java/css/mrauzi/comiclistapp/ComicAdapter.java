@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -25,7 +24,6 @@ public class ComicAdapter extends ArrayAdapter<Comic> {
     private Context context;
     ComicTableDAO comicTable;
     ImageButton imgBtnDelete;
-    CheckBox cbComicPurchased;
 
 
     /**
@@ -65,25 +63,6 @@ public class ComicAdapter extends ArrayAdapter<Comic> {
         TextView tvVolume = (TextView)view.findViewById(R.id.textViewComicVolume);
 
 
-
-        cbComicPurchased = (CheckBox) view.findViewById(R.id.checkBoxPurchased);
-        cbComicPurchased.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // check the status of the checkbox in the list
-                if (DatabaseHelper.DB_FIELD_COMICSTATUS)
-                /*if(pref.getBoolean("check", false))
-                {
-                    cbComicPurchased.setChecked(false);
-                    pref.edit().putBoolean("check", false).commit();
-
-                } else {
-                    cbComicPurchased.setChecked(true);
-                    pref.edit().putBoolean("check", true).commit();
-                }*/
-            }
-        });
-
         /**
          * Set up button click event listener for the user to delete a comic from the database using the image button
          */
@@ -109,8 +88,8 @@ public class ComicAdapter extends ArrayAdapter<Comic> {
 
         // setting the TextViews to display the data
         tvName.setText(comic.getName());
-        tvPrice.setText(comic.getPrice().toString());
-        tvVolume.setText(comic.getVolume().toString());
+        tvPrice.setText(String.format("$%.2f", comic.getPrice()));
+        tvVolume.setText("Volume #: " + comic.getVolume().toString());
 
         return(view);
     }

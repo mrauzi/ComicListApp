@@ -8,8 +8,8 @@ import java.util.List;
 
 public class ListViewActivity extends AppCompatActivity {
 
-    ListView lvComic;
-    ComicTableDAO comicTable;
+    ListView lvComic;                   // the ListView to display the comic object
+    ComicTableDAO comicTable;           // the comic database access object
 
 
     @Override

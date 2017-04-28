@@ -30,4 +30,6 @@
     <string name="share">Share</string>
     <string name="slideshow">Slideshow</string>
     <string name="tools">Tools</string>
+    <string name="comic_list">Comic List</string>
+    <string name="keep_a_list_of_your_comics">Keep a list of your comics!</string>
 </resources>
