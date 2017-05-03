@@ -20,6 +20,7 @@ import java.util.List;
  */
 public class ComicAdapter extends ArrayAdapter<Comic> {
 
+    // data members
     private List<Comic> comicList;
     private Context context;
     ComicTableDAO comicTable;
@@ -79,7 +80,6 @@ public class ComicAdapter extends ArrayAdapter<Comic> {
                         .setAction("Action", null).show();
 
                 // remove the comic object from the ListView
-                // comicList.remove(comic);
                 remove(comic);
                 notifyDataSetChanged();
 

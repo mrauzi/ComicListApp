@@ -11,6 +11,7 @@ import android.util.Log;
  */
 
 public class DatabaseHelper extends SQLiteOpenHelper {
+    // data members
     private static final String DATABASE_NAME="comic_constants.db"; // the name of the database
     private static final int SCHEMA=1;                              // the version of the database
     static final String DB_TABLE_NAME="comics";                     // the name of the database table
@@ -48,7 +49,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * onCreate() - execute command to create the database
+     * onCreate() - execute the command to create the database
      */
     @Override
     public void onCreate(SQLiteDatabase database) {

@@ -20,6 +20,7 @@ import android.widget.EditText;
 public class ComicActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    // data members
     Button btnAmazon;
     Button btnAddComic;
     Button btnViewList;
@@ -38,6 +39,7 @@ public class ComicActivity extends AppCompatActivity
         comicTable = new ComicTableDAO(this);   // initialize the comic table data access object
         comicTable.open();                      // open the database
 
+        // instantiate the variables to the EditText IDs
         etComicName = (EditText)findViewById(R.id.editTextComicName);
         etComicPrice = (EditText)findViewById(R.id.editTextComicPrice);
         etComicVol = (EditText)findViewById(R.id.editTextComicVolume);
@@ -94,6 +96,7 @@ public class ComicActivity extends AppCompatActivity
                     comicTable.createComic(etComicName.getText().toString(), Double.parseDouble(etComicPrice.getText().toString()), Integer.parseInt(etComicVol.getText().toString()));
                     Snackbar.make(v, "Comic has been added to the list", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
+                    // clear the EditText fields
                     etComicName.setText("");
                     etComicPrice.setText("");
                     etComicVol.setText("");

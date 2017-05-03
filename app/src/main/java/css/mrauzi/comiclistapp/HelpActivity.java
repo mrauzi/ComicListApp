@@ -8,6 +8,7 @@ import org.w3c.dom.Text;
 
 public class HelpActivity extends AppCompatActivity {
 
+    // data members
     TextView tvStep1;
     TextView tvStep2;
     TextView tvStep3;
@@ -19,12 +20,14 @@ public class HelpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help);
 
+        // instantiate the variables to the TextView IDs
         tvStep1 = (TextView) findViewById(R.id.textViewStep1);
         tvStep2 = (TextView) findViewById(R.id.textViewStep2);
         tvStep3 = (TextView) findViewById(R.id.textViewStep3);
         tvStep4 = (TextView) findViewById(R.id.textViewStep4);
         tvStep5 = (TextView) findViewById(R.id.textViewStep5);
 
+        // setting the TextViews to display the data
         tvStep1.setText("Step 1: Once you have entered the app, press the 'Amazon' button to begin searching for comics.");
         tvStep2.setText("Step 2: When you find a comic, return to the app and enter in the information.");
         tvStep3.setText("Step 3: Press the 'Add Comic' button to add the comic to your list.");

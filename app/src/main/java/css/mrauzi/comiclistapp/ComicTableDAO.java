@@ -46,7 +46,7 @@ public class ComicTableDAO {
      * createComic() - saves a new comic to the comic table in the SQLite database.
      *
      * @param comicName - name of the comic
-     * @param comicPrice - price of the planet
+     * @param comicPrice - price of the comic
      * @param comicVolume - the volume number of the comic
      * @return Comic - returns the comic that was created
      */
@@ -69,11 +69,11 @@ public class ComicTableDAO {
      */
     public List<Comic> getAllComics() {
         List<Comic> comics = new ArrayList<Comic>();
-        // query the database for all the fields of all the records in the planet table
+        // query the database for all the fields of all the records in the comic table
         // query(String table, String[] columns, String selection, String[] selectionArgs, String groupBy, String having, String orderBy, String limit)
         Cursor cursor = database.query(DatabaseHelper.DB_TABLE_NAME,
                 null, null, null, null, null, null);
-        // loop through the cursor converting each row into a planet object
+        // loop through the cursor converting each row into a comic object
         while (cursor.moveToNext()) {
             Comic comic = cursorToComic(cursor);
             comics.add(comic);
